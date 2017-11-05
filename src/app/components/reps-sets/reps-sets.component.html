@@ -1,0 +1,10 @@
+<div class="example-container fields-container">
+  <mat-form-field>
+    <input matInput placeholder="Input" [(ngModel)]="num" (ngModelChange)="createArr(num)">
+  </mat-form-field>
+  <div *ngFor="let sets of arr; let i = index">
+    <mat-form-field>
+      {{i+1}}<input matInput type="text">
+    </mat-form-field>
+  </div>
+</div>

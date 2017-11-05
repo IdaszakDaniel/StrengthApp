@@ -4,15 +4,15 @@ import { HttpModule} from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material';
+import {MatFormFieldModule, , MatInputModule} from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StatsComponent } from './components/stats/stats.component';
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material';
-
-
+import { RepsSetsComponent } from './components/reps-sets/reps-sets.component';
 
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     NewWorkoutComponent,
     NavbarComponent,
-    StatsComponent
+    StatsComponent,
+    RepsSetsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,9 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
