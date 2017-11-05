@@ -1,0 +1,19 @@
+<div class="AppContainer">
+  <div class="sidemenu" (mouseenter)="sidenav.open()" >
+    <p>a</p>
+    <p>a</p>
+    <p>a</p>
+  </div>
+
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="example-sidenav" (mouseleave)="sidenav.close()">
+      <app-navbar (click)="sidenav.close()"></app-navbar>
+    </mat-sidenav>
+
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-container>
+</div>

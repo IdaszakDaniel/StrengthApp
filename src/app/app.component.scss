@@ -1,0 +1,30 @@
+.AppContainer{
+  background-color: #275FA2;
+  width: 100%;
+  height: 100%;
+}
+.sidemenu{
+  //position: fixed;
+  display: inline-block;
+  vertical-align: top;
+  height: 100vh;
+  width: 3vw;
+  background-color: #275FA2;
+}
+.example-container {
+  display: inline-block;
+  width: 97.5vw;
+  margin-left: -2vw;
+  height: 100vh;
+  background-color: #275FA2;
+  //border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+}
+
+.example-sidenav {
+  background-color: #275FA2;
+}
