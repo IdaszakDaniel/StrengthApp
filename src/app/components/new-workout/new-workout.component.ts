@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewWorkoutComponent implements OnInit {
 
-  exercises: string = [];
+  exercises: string[];
   constructor() { }
 
   ngOnInit() {
