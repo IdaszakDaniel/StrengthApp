@@ -6,3 +6,16 @@
 // .example-container > * {
 //   width: 100%;
 // }
+
+.reps-sets-container{
+  .container-input{
+    display: block;
+  }
+  .container-fields{
+    display: inline-block;
+
+    .fields-reps{
+      width: 40px;
+    }
+  }
+}

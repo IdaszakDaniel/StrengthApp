@@ -1,1 +1,11 @@
-<app-reps-sets></app-reps-sets>
+<div class="container-new-workout">
+  <mat-form-field>
+    <mat-select placeholder="Exercise">
+      <mat-option *ngFor="let exercise of exercises" value="{{exercise}}">{{exercise}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field >
+    <input matInput placeholder="Name">
+  </mat-form-field>
+  <app-reps-sets></app-reps-sets>
+</div>

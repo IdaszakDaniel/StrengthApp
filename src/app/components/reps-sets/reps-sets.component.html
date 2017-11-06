@@ -1,10 +1,15 @@
-<div class="example-container fields-container">
-  <mat-form-field>
+<div class="reps-sets-container fields-container">
+  <mat-form-field class="container-input">
     <input matInput placeholder="Input" [(ngModel)]="num" (ngModelChange)="createArr(num)">
   </mat-form-field>
-  <div *ngFor="let sets of arr; let i = index">
-    <mat-form-field>
-      {{i+1}}<input matInput type="text">
+
+  <mat-checkbox class="container-input">Same reps for every set</mat-checkbox>
+
+  <div *ngFor="let sets of arr; let i = index" class="container-fields">
+    <span>{{i+1}}</span>
+    <mat-form-field class="fields-reps">
+      <input matInput type="text">
     </mat-form-field>
   </div>
+
 </div>

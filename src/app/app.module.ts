@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material';
-import {MatFormFieldModule, , MatInputModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
@@ -35,7 +35,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

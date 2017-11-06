@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewWorkoutComponent implements OnInit {
 
+  exercises: string = [];
   constructor() { }
 
   ngOnInit() {
+    this.exercises = ['bicep','back','calves','delts','traps']
   }
 
 }
