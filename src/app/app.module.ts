@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material';
 import {MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
