@@ -1,12 +1,12 @@
 <div class="container-new-workout">
   <mat-form-field>
-    <mat-select placeholder="Exercise">
-      <mat-option *ngFor="let exercise of exercises" value="{{exercise}}">{{exercise}}</mat-option>
+    <mat-select placeholder="Exercise" [(ngModel)]="type">
+      <mat-option *ngFor="let exercise of exercises"  value="{{exercise}}">{{exercise}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field >
-    <input matInput placeholder="Name">
+    <input matInput placeholder="Name" [(ngModel)]="name">
   </mat-form-field>
   <app-reps-sets></app-reps-sets>
-  <button mat-raised-button color="primary">ADD</button>
+  <button mat-raised-button color="primary" (click)="addExercise(type, name, 1, [1,2])">ADD</button>
 </div>
