@@ -9,7 +9,7 @@
     <div *ngFor="let sets of arr; let i = index" class="container-fields">
       <span>{{i+1}} x </span>
       <mat-form-field class="fields-reps" >
-        <input matInput type="text" placeholder="reps">
+        <input matInput type="number" placeholder="reps" [(ngModel)]="reps">
       </mat-form-field>
     </div>
   </div>
@@ -17,7 +17,7 @@
   <div *ngIf="isSameReps()">
     <div class="container-fields">
       <mat-form-field class="fields-reps">
-        <input matInput type="text" placeholder="reps" [(ngModel)]="reps">
+        <input matInput type="number" placeholder="reps" [(ngModel)]="reps">
       </mat-form-field>
     </div>
     <div *ngFor="let sets of arr; let i = index" class="container-fields container-box">

@@ -9,18 +9,22 @@ import { RepsSetsComponent } from '../reps-sets/reps-sets.component'
 export class NewWorkoutComponent implements OnInit {
 
   exercises: string[];
+  type: string;
+  name: string;
   @ViewChild(RepsSetsComponent) repsSets:RepsSetsComponent;
 
   constructor() { }
 
   ngOnInit() {
-    this.exercises = ['bicep','back','calves','delts','traps']
+    this.exercises = ['bicep','back','calves','delts','traps'];
   }
 
   addExercise(type: string, name: string, sets: number, reps:number[]){
-    var x = new Exercise(type, name, sets, reps);
+    var x = new Exercise(this.type,
+                        this.name,
+                        this.repsSets.getSets(),
+                        this.repsSets.getSetsReps());
     console.log(x);
-    console.log(this.repsSets.sameReps);
   }
 
 }
