@@ -1,4 +1,8 @@
-<div class="container-new-workout">
+<div *ngIf="initialState">
+  <button mat-raised-button color="primary" (click)="addWorkout()">ADD NEW WORKOUT</button>
+</div>
+
+<div class="container-new-workout" *ngIf="!initialState">
   <mat-form-field>
     <mat-select placeholder="Exercise" [(ngModel)]="type">
       <mat-option *ngFor="let exercise of exercises"  value="{{exercise}}">{{exercise}}</mat-option>
@@ -23,4 +27,20 @@
       <td>{{workout.reps}}</td>
     </tr>
   </table>
+  <button mat-raised-button color="primary" (click)="saveWorkout()">SAVE WORKOUT</button>
 </div>
+
+<table *ngFor="let plan of plans">
+  <tr>
+    <th>TYPE</th>
+    <th>NAME</th>
+    <th>SETS</th>
+    <th>REPS</th>
+  </tr>
+  <tr *ngFor="let exc of plan">
+    <td>{{exc.type}}</td>
+    <td>{{exc.name}}</td>
+    <td>{{exc.sets}}</td>
+    <td>{{exc.reps}}</td>
+  </tr>
+</table>
