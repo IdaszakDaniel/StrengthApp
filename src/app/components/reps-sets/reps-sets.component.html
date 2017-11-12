@@ -1,28 +1,30 @@
-<div class="reps-sets-container fields-container">
-  <mat-form-field class="container-input">
-    <input matInput placeholder="Sets" [(ngModel)]="num" (ngModelChange)="createArr(num)">
-  </mat-form-field>
+<form>
+  <div class="reps-sets-container fields-container">
+    <mat-form-field class="container-input">
+      <input matInput placeholder="Sets" [(ngModel)]="num" name="num" (ngModelChange)="createArr(num)">
+    </mat-form-field>
 
-  <mat-checkbox class="container-input" [(ngModel)]="sameReps" (ngModelChange)="isSameReps()">Same reps for every set</mat-checkbox>
+    <mat-checkbox class="container-input" [(ngModel)]="sameReps" (ngModelChange)="isSameReps()" name="isSameReps">Same reps for every set</mat-checkbox>
 
-  <div *ngIf="!isSameReps()">
-    <div *ngFor="let sets of arr; let i = index" class="container-fields">
-      <span>{{i+1}} x </span>
-      <mat-form-field class="fields-reps" >
-        <input matInput type="number" placeholder="reps" [(ngModel)]="reps">
-      </mat-form-field>
+    <div *ngIf="!isSameReps()">
+      <div *ngFor="let sets of arr; let i = index" class="container-fields">
+        <span>{{i+1}} x </span>
+        <mat-form-field class="fields-reps" >
+          <input matInput type="number" placeholder="reps" [(ngModel)]="words[i]" name="word{{i}}">
+        </mat-form-field>
+      </div>
     </div>
+
+    <div *ngIf="isSameReps()">
+      <div class="container-fields">
+        <mat-form-field class="fields-reps">
+          <input matInput type="number" placeholder="reps" [(ngModel)]="reps" name="reps">
+        </mat-form-field>
+      </div>
+      <div *ngFor="let sets of arr; let i = index" class="container-fields container-box">
+        <span>{{i+1}} </span> <span>x {{reps}}</span>
+      </div>
+    </div>
+    <button (click)="getValues(myForm)">test</button>
   </div>
-
-  <div *ngIf="isSameReps()">
-    <div class="container-fields">
-      <mat-form-field class="fields-reps">
-        <input matInput type="number" placeholder="reps" [(ngModel)]="reps">
-      </mat-form-field>
-    </div>
-    <div *ngFor="let sets of arr; let i = index" class="container-fields container-box">
-      <span>{{i+1}} </span> <span>x {{reps}}</span>
-    </div>
-  </div>
-
-</div>
+</form>

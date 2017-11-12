@@ -9,8 +9,9 @@ export class RepsSetsComponent implements OnInit {
   num: number = 0;
   arr: any;
   sameReps: boolean;
-  TempArr: string[];
+  TempArr: number[];
   reps: number;
+  words: number[] = [];
 
   constructor() {
   }
@@ -21,7 +22,7 @@ export class RepsSetsComponent implements OnInit {
   createArr(num){
     this.arr = [];
     for (let i = 0; i < num; i++){
-      this.arr.push('x');
+      this.arr.push(i);
     }
   }
 
@@ -33,22 +34,20 @@ export class RepsSetsComponent implements OnInit {
     return this.num;
   }
 
+  getValues(myForm) {
+    console.log(this.words, this.reps, this.sameReps);
+  }
+
   getSetsReps(){
     this.TempArr = [];
     if(this.isSameReps()){
       for(let i = 0; i < this.num; i++){
         this.TempArr.push(this.reps);
       }
-    }
-    // } else{
-    //   let i = 1;
-    //   this.arr.forEach() {
-    //     console.log(this.reps[i]);
-    //     //this.TempArr.push(this."reps"+i);
-    //     i++;
-    //   }
-    // }
-    return this.TempArr;
+      return this.TempArr;
+    } else{
+        return this.words;
+      }
   }
 
 }

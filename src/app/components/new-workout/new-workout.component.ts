@@ -11,6 +11,7 @@ export class NewWorkoutComponent implements OnInit {
   exercises: string[];
   type: string;
   name: string;
+  workouts: any = [];
   @ViewChild(RepsSetsComponent) repsSets:RepsSetsComponent;
 
   constructor() { }
@@ -19,12 +20,12 @@ export class NewWorkoutComponent implements OnInit {
     this.exercises = ['bicep','back','calves','delts','traps'];
   }
 
-  addExercise(type: string, name: string, sets: number, reps:number[]){
+  addExercise(){
     var x = new Exercise(this.type,
                         this.name,
                         this.repsSets.getSets(),
                         this.repsSets.getSetsReps());
-    console.log(x);
+    this.workouts.push(x);
   }
 
 }

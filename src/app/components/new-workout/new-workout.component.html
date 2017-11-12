@@ -8,5 +8,11 @@
     <input matInput placeholder="Name" [(ngModel)]="name">
   </mat-form-field>
   <app-reps-sets></app-reps-sets>
-  <button mat-raised-button color="primary" (click)="addExercise(type, name, 1, [1,2])">ADD</button>
+  <button mat-raised-button color="primary" (click)="addExercise()">ADD</button>
+</div>
+<div *ngFor="let workout of workouts">
+  {{workout.type}}
+  {{workout.name}}
+  {{workout.sets}}
+  {{workout.reps}}
 </div>
