@@ -34,10 +34,6 @@ export class RepsSetsComponent implements OnInit {
     return this.num;
   }
 
-  getValues(myForm) {
-    console.log(this.words, this.reps, this.sameReps);
-  }
-
   getSetsReps(){
     this.TempArr = [];
     if(this.isSameReps()){

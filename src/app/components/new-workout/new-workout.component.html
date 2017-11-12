@@ -9,10 +9,18 @@
   </mat-form-field>
   <app-reps-sets></app-reps-sets>
   <button mat-raised-button color="primary" (click)="addExercise()">ADD</button>
-</div>
-<div *ngFor="let workout of workouts">
-  {{workout.type}}
-  {{workout.name}}
-  {{workout.sets}}
-  {{workout.reps}}
+  <table>
+    <tr>
+      <th>TYPE</th>
+      <th>NAME</th>
+      <th>SETS</th>
+      <th>REPS</th>
+    </tr>
+    <tr *ngFor="let workout of workouts">
+      <td>{{workout.type}}</td>
+      <td>{{workout.name}}</td>
+      <td>{{workout.sets}}</td>
+      <td>{{workout.reps}}</td>
+    </tr>
+  </table>
 </div>
