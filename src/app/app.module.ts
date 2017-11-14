@@ -15,6 +15,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { RepsSetsComponent } from './components/reps-sets/reps-sets.component';
 
+import { AddWorkoutService } from './services/add-workout.service';
+import { WorkoutsListService } from './services/workouts-list.service';
+
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
   {path: 'stats', component: StatsComponent}
@@ -42,7 +45,10 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    AddWorkoutService,
+    WorkoutsListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
