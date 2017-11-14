@@ -17,6 +17,18 @@ export class AddWorkoutService {
 
   resetCurrentWorkout(){
     this.workout = [];
+    this.workoutUpdated.emit(this.workout);
+  }
+
+  deleteExercise(el){
+    var index = this.workout.indexOf(el);
+    if(index > -1) this.workout.splice(index, 1);
+    this.workoutUpdated.emit(this.workout);
+  }
+
+  editWorkout(el){
+    this.workout = el;
+    this.workoutUpdated.emit(this.workout);
   }
 
 }

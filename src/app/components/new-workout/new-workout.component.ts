@@ -16,7 +16,7 @@ export class NewWorkoutComponent implements OnInit {
   type: string;
   name: string;
   exercises: any;
-  plans: any = [];
+  plans: any;
   initialState: boolean = true;
   addWorkout;
   workoutsList;
@@ -29,11 +29,16 @@ export class NewWorkoutComponent implements OnInit {
 
   ngOnInit() {
     this.bodyParts = ['bicep','back','calves','delts','traps'];
-    this.plans = this.workoutsList.getWorkoutPlan();
 
     this.addWorkout.workoutUpdated.subscribe(
       (exercises) => {
         this.exercises = exercises;
+      }
+    );
+
+    this.workoutsList.PlanUpdated.subscribe(
+      (plans) => {
+        this.plans = plans;
       }
     );
 
@@ -53,9 +58,23 @@ export class NewWorkoutComponent implements OnInit {
   saveWorkout(){
     this.workoutsList.setWorkoutDay(this.exercises);
     this.addWorkout.resetCurrentWorkout();
-    this.exercises = [];
-    this.plans = this.workoutsList.getWorkoutPlan();
     this.initialState = true;
+  }
+
+  deleteExercise(el){
+    this.addWorkout.deleteExercise(el);
+  }
+
+  deletePlan(el){
+    this.workoutsList.deletePlan(el);
+  }
+
+  editPlan(el){
+    if(this.initialState){
+      this.initialState = false;
+      this.workoutsList.deletePlan(el);
+      this.addWorkout.editWorkout(el);
+    }
   }
 
 }

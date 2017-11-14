@@ -20,12 +20,14 @@
         <th>NAME</th>
         <th>SETS</th>
         <th>REPS</th>
+        <th></th>
       </tr>
       <tr *ngFor="let exercise of exercises">
         <td>{{exercise.type}}</td>
         <td>{{exercise.name}}</td>
         <td>{{exercise.sets}}</td>
         <td>{{exercise.reps}}</td>
+        <button mat-raised-button color="warn" (click)="deleteExercise(exercise)">DELETE</button>
       </tr>
     </table>
     <button mat-raised-button color="primary" (click)="saveWorkout(); WorkoutForm.reset()">SAVE WORKOUT</button>
@@ -38,6 +40,8 @@
     <th>NAME</th>
     <th>SETS</th>
     <th>REPS</th>
+    <button mat-raised-button color="basic" (click)="editPlan(plan)">EDIT</button>
+    <button mat-raised-button color="warn" (click)="deletePlan(plan)">DELETE</button>
   </tr>
   <tr *ngFor="let workout of plan">
     <td>{{workout.type}}</td>
