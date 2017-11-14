@@ -3,31 +3,33 @@
 </div>
 
 <div class="container-new-workout" *ngIf="!initialState">
-  <mat-form-field>
-    <mat-select placeholder="Exercise" [(ngModel)]="type">
-      <mat-option *ngFor="let exercise of exercises"  value="{{exercise}}">{{exercise}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field >
-    <input matInput placeholder="Name" [(ngModel)]="name">
-  </mat-form-field>
-  <app-reps-sets></app-reps-sets>
-  <button mat-raised-button color="primary" (click)="addExercise()">ADD</button>
-  <table>
-    <tr>
-      <th>TYPE</th>
-      <th>NAME</th>
-      <th>SETS</th>
-      <th>REPS</th>
-    </tr>
-    <tr *ngFor="let workout of workouts">
-      <td>{{workout.type}}</td>
-      <td>{{workout.name}}</td>
-      <td>{{workout.sets}}</td>
-      <td>{{workout.reps}}</td>
-    </tr>
-  </table>
-  <button mat-raised-button color="primary" (click)="saveWorkout()">SAVE WORKOUT</button>
+  <form #WorkoutForm="ngForm">
+    <mat-form-field>
+      <mat-select placeholder="Exercise" [(ngModel)]="type" name="type">
+        <mat-option *ngFor="let exercise of exercises"  value="{{exercise}}">{{exercise}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field >
+      <input matInput placeholder="Name" [(ngModel)]="name" name="name">
+    </mat-form-field>
+    <app-reps-sets></app-reps-sets>
+    <button mat-raised-button color="primary" (click)="addExercise()">ADD</button>
+    <table>
+      <tr>
+        <th>TYPE</th>
+        <th>NAME</th>
+        <th>SETS</th>
+        <th>REPS</th>
+      </tr>
+      <tr *ngFor="let workout of workouts">
+        <td>{{workout.type}}</td>
+        <td>{{workout.name}}</td>
+        <td>{{workout.sets}}</td>
+        <td>{{workout.reps}}</td>
+      </tr>
+    </table>
+    <button mat-raised-button color="primary" (click)="saveWorkout(); WorkoutForm.reset()">SAVE WORKOUT</button>
+  </form>
 </div>
 
 <table *ngFor="let plan of plans">
