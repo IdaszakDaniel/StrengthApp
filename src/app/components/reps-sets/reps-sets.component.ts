@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reps-sets.component.scss']
 })
 export class RepsSetsComponent implements OnInit {
-  num: number = 0;
+  num: number;
   arr: any;
   sameReps: boolean;
   TempArr: number[];

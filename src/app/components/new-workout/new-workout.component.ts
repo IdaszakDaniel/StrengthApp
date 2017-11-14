@@ -12,10 +12,10 @@ import { WorkoutsListService } from '../../services/workouts-list.service';
 })
 export class NewWorkoutComponent implements OnInit {
 
-  exercises: string[];
+  bodyParts: string[];
   type: string;
   name: string;
-  workouts: any;
+  exercises: any;
   plans: any = [];
   initialState: boolean = true;
   addWorkout;
@@ -28,12 +28,12 @@ export class NewWorkoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.exercises = ['bicep','back','calves','delts','traps'];
+    this.bodyParts = ['bicep','back','calves','delts','traps'];
     this.plans = this.workoutsList.getWorkoutPlan();
 
     this.addWorkout.workoutUpdated.subscribe(
-      (workout) => {
-        this.workouts = workout;
+      (exercises) => {
+        this.exercises = exercises;
       }
     );
 
@@ -51,9 +51,9 @@ export class NewWorkoutComponent implements OnInit {
   }
 
   saveWorkout(){
-    this.workoutsList.setWorkoutDay(this.workouts);
+    this.workoutsList.setWorkoutDay(this.exercises);
     this.addWorkout.resetCurrentWorkout();
-    this.workouts = [];
+    this.exercises = [];
     this.plans = this.workoutsList.getWorkoutPlan();
     this.initialState = true;
   }

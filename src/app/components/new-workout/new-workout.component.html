@@ -5,8 +5,8 @@
 <div class="container-new-workout" *ngIf="!initialState">
   <form #WorkoutForm="ngForm">
     <mat-form-field>
-      <mat-select placeholder="Exercise" [(ngModel)]="type" name="type">
-        <mat-option *ngFor="let exercise of exercises"  value="{{exercise}}">{{exercise}}</mat-option>
+      <mat-select placeholder="Body Part" [(ngModel)]="type" name="type">
+        <mat-option *ngFor="let bodyPart of bodyParts"  value="{{bodyPart}}">{{bodyPart}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field >
@@ -21,11 +21,11 @@
         <th>SETS</th>
         <th>REPS</th>
       </tr>
-      <tr *ngFor="let workout of workouts">
-        <td>{{workout.type}}</td>
-        <td>{{workout.name}}</td>
-        <td>{{workout.sets}}</td>
-        <td>{{workout.reps}}</td>
+      <tr *ngFor="let exercise of exercises">
+        <td>{{exercise.type}}</td>
+        <td>{{exercise.name}}</td>
+        <td>{{exercise.sets}}</td>
+        <td>{{exercise.reps}}</td>
       </tr>
     </table>
     <button mat-raised-button color="primary" (click)="saveWorkout(); WorkoutForm.reset()">SAVE WORKOUT</button>
@@ -39,10 +39,10 @@
     <th>SETS</th>
     <th>REPS</th>
   </tr>
-  <tr *ngFor="let exc of plan">
-    <td>{{exc.type}}</td>
-    <td>{{exc.name}}</td>
-    <td>{{exc.sets}}</td>
-    <td>{{exc.reps}}</td>
+  <tr *ngFor="let workout of plan">
+    <td>{{workout.type}}</td>
+    <td>{{workout.name}}</td>
+    <td>{{workout.sets}}</td>
+    <td>{{workout.reps}}</td>
   </tr>
 </table>
