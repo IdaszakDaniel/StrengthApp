@@ -11,20 +11,22 @@ export class TodayWorkoutComponent implements OnInit {
 
   workoutsList;
   titles: string[];
+  plans: any = [];
   currentWorkout: any = ["title" : "test"];
+  chooseWorkout: boolean = true;
 
   constructor(workoutsListService:WorkoutsListService) {
     this.workoutsList = workoutsListService;
-    this.titles = this.workoutsList.getWorkoutTitles();
   }
 
   ngOnInit() {
     this.titles = this.workoutsList.getWorkoutTitles();
+    this.plans = this.workoutsList.getWorkoutPlan();
   }
 
   getWorkout(id){
+    this.chooseWorkout = false;
     this.currentWorkout = this.workoutsList.getWorkout(id);
-    console.log(this.currentWorkout);
   }
 
 }

@@ -30,6 +30,7 @@ export class NewWorkoutComponent implements OnInit {
 
   ngOnInit() {
     this.bodyParts = ['bicep','back','calves','delts','traps'];
+    this.plans = this.workoutsList.getWorkoutPlan();
 
     this.addWorkout.workoutUpdated.subscribe(
       (exercises) => {
