@@ -10,13 +10,23 @@ export class WorkoutsListService {
 
   constructor() { }
 
-  setWorkoutDay(workout){
+  setWorkoutDay(workout, title){
+    workout.title = title;
     this.WorkoutPlan.push(workout);
     this.PlanUpdated.emit(this.WorkoutPlan);
   }
 
   getWorkoutPlan(){
     return this.WorkoutPlan;
+  }
+
+  getWorkoutTitles(){
+    return this.WorkoutPlan.map((el) => el.title));
+  }
+
+  getWorkout(id){
+    let index = this.WorkoutPlan.indexOf(this.WorkoutPlan.filter((el) => el.title == id)[0]);
+    if(index > -1) return this.WorkoutPlan[index];
   }
 
   deletePlan(el){

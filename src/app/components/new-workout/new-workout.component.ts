@@ -18,6 +18,7 @@ export class NewWorkoutComponent implements OnInit {
   exercises: any;
   plans: any;
   initialState: boolean = true;
+  title: string;
   addWorkout;
   workoutsList;
   @ViewChild(RepsSetsComponent) repsSets:RepsSetsComponent;
@@ -56,7 +57,7 @@ export class NewWorkoutComponent implements OnInit {
   }
 
   saveWorkout(){
-    this.workoutsList.setWorkoutDay(this.exercises);
+    this.workoutsList.setWorkoutDay(this.exercises, this.title);
     this.addWorkout.resetCurrentWorkout();
     this.initialState = true;
   }

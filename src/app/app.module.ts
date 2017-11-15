@@ -9,18 +9,20 @@ import { MatSidenavModule } from '@angular/material';
 import { MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 
+import { AddWorkoutService } from './services/add-workout.service';
+import { WorkoutsListService } from './services/workouts-list.service';
+
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { RepsSetsComponent } from './components/reps-sets/reps-sets.component';
-
-import { AddWorkoutService } from './services/add-workout.service';
-import { WorkoutsListService } from './services/workouts-list.service';
+import { TodayWorkoutComponent } from './components/today-workout/today-workout.component';
 
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
-  {path: 'stats', component: StatsComponent}
+  {path: 'stats', component: StatsComponent},
+  {path: 'today', component: TodayWorkoutComponent}
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     NewWorkoutComponent,
     NavbarComponent,
     StatsComponent,
-    RepsSetsComponent
+    RepsSetsComponent,
+    TodayWorkoutComponent
   ],
   imports: [
     BrowserModule,

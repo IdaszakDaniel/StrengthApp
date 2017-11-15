@@ -1,0 +1,19 @@
+<div *ngFor="let title of titles">
+  <button (click)="getWorkout(title)">{{title}}</button>
+</div>
+
+<table>
+  {{currentWorkout.title}}
+  <tr>
+    <th>TYPE</th>
+    <th>NAME</th>
+    <th>SETS</th>
+    <th>REPS</th>
+  </tr>
+  <tr *ngFor="let workout of currentWorkout">
+    <td>{{workout.type}}</td>
+    <td>{{workout.name}}</td>
+    <td>{{workout.sets}}</td>
+    <td>{{workout.reps}}</td>
+  </tr>
+</table>

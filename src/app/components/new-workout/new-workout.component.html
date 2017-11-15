@@ -4,6 +4,9 @@
 
 <div class="container-new-workout" *ngIf="!initialState">
   <form #WorkoutForm="ngForm">
+    <mat-form-field >
+      <input matInput placeholder="Title" [(ngModel)]="title" name="title">
+    </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Body Part" [(ngModel)]="type" name="type">
         <mat-option *ngFor="let bodyPart of bodyParts"  value="{{bodyPart}}">{{bodyPart}}</mat-option>
@@ -35,6 +38,7 @@
 </div>
 
 <table *ngFor="let plan of plans">
+  {{plan.title}}
   <tr>
     <th>TYPE</th>
     <th>NAME</th>
