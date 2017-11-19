@@ -1,3 +1,5 @@
+<app-set-date></app-set-date>
+
 <div *ngIf="chooseWorkout">
   <table *ngFor="let plan of plans">
     <button (click)="getWorkout(plan.title)">{{plan.title}}</button>

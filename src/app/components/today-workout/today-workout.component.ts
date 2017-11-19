@@ -12,7 +12,7 @@ export class TodayWorkoutComponent implements OnInit {
   workoutsList;
   titles: string[];
   plans: any = [];
-  currentWorkout: any = ["title" : "test"];
+  currentWorkout: any = [];
   chooseWorkout: boolean = true;
 
   constructor(workoutsListService:WorkoutsListService) {

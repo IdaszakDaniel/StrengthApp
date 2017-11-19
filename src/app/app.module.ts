@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { StatsComponent } from './components/stats/stats.component';
 import { RepsSetsComponent } from './components/reps-sets/reps-sets.component';
 import { TodayWorkoutComponent } from './components/today-workout/today-workout.component';
+import { SetDateComponent } from './components/set-date/set-date.component';
 
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     StatsComponent,
     RepsSetsComponent,
-    TodayWorkoutComponent
+    TodayWorkoutComponent,
+    SetDateComponent
   ],
   imports: [
     BrowserModule,
