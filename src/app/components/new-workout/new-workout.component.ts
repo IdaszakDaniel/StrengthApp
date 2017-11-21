@@ -3,8 +3,6 @@ import { RepsSetsComponent } from '../reps-sets/reps-sets.component';
 import { AddWorkoutService } from '../../services/add-workout.service';
 import { WorkoutsListService } from '../../services/workouts-list.service';
 
-
-
 @Component({
   selector: 'app-new-workout',
   templateUrl: './new-workout.component.html',

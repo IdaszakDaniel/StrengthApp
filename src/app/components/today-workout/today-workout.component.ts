@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { WorkoutsListService } from '../../services/workouts-list.service';
+import { SetDateComponent } from '../set-date/set-date.component';
 
 @Component({
   selector: 'app-today-workout',
@@ -14,6 +15,7 @@ export class TodayWorkoutComponent implements OnInit {
   plans: any = [];
   currentWorkout: any = [];
   chooseWorkout: boolean = true;
+  @ViewChild(SetDateComponent) setDate:SetDateComponent;
 
   constructor(workoutsListService:WorkoutsListService) {
     this.workoutsList = workoutsListService;
@@ -27,6 +29,7 @@ export class TodayWorkoutComponent implements OnInit {
   getWorkout(id){
     this.chooseWorkout = false;
     this.currentWorkout = this.workoutsList.getWorkout(id);
+    console.log(this.setDate.getCurrentDate());
   }
 
 }

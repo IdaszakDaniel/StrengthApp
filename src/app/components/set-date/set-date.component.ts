@@ -33,4 +33,8 @@ export class SetDateComponent implements OnInit {
     return this.currentDate;
   }
 
+  getCurrentDate(){
+    return this.date;
+  }
+
 }
