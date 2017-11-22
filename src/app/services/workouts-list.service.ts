@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { ResourceService } from './resource.service';
 
 @Injectable()
 export class WorkoutsListService {
 
   WorkoutPlan: any = [];
   PlanUpdated: EventEmitter<any> = new EventEmitter();
+  resource;
 
+  constructor(resourceService:ResourceService) {
+    this.resource = resourceService;
+  }
 
-  constructor() { }
+  fetchWorkouts(){
+    this.resource.getData().subscribe(el => {
+  		this.WorkoutPlan = el;
+  	});
+    this.PlanUpdated.emit(this.WorkoutPlan);
+  }
 
   setWorkoutDay(workout, title){
-    workout.title = title;
-    this.WorkoutPlan.push(workout);
+    this.WorkoutPlan.push({title, workout});
     this.PlanUpdated.emit(this.WorkoutPlan);
-    console.log(this.WorkoutPlan);
   }
 
   getWorkoutPlan(){

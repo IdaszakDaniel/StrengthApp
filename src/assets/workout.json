@@ -1,0 +1,78 @@
+[
+   {
+     "title" : "workout A",
+     "workout" : [
+        {
+           "type": "bicep",
+           "name": "curl",
+           "sets": "5",
+           "reps": [
+              15,
+              14,
+              13,
+              12,
+              11
+           ]
+        },
+        {
+           "type": "delts",
+           "name": "raises",
+           "sets": "2",
+           "reps": [
+              12,
+              12
+           ]
+        },
+        {
+           "type": "traps",
+           "name": "shrug",
+           "sets": "3",
+           "reps": [
+              3,
+              3,
+              3
+           ]
+        }
+      ]
+   },
+   {
+     "title" : "workout B",
+     "workout" : [
+        {
+           "type": "calves",
+           "name": "raises",
+           "sets": "5",
+           "reps": [
+              15,
+              15,
+              15,
+              15,
+              15
+           ]
+        },
+        {
+           "type": "back",
+           "name": "deadlift",
+           "sets": "3",
+           "reps": [
+              5,
+              4,
+              3
+           ]
+        },
+        {
+           "type": "traps",
+           "name": "shrug",
+           "sets": "6",
+           "reps": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+           ]
+        }
+      ]
+   }
+]

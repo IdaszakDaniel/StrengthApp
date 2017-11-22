@@ -38,7 +38,7 @@
 </div>
 
 <table *ngFor="let plan of plans">
-  {{plan.title}}
+  <h3>{{plan.title}}</h3>
   <tr>
     <th>TYPE</th>
     <th>NAME</th>
@@ -47,7 +47,7 @@
     <button mat-raised-button color="basic" (click)="editPlan(plan)">EDIT</button>
     <button mat-raised-button color="warn" (click)="deletePlan(plan)">DELETE</button>
   </tr>
-  <tr *ngFor="let workout of plan">
+  <tr *ngFor="let workout of plan.workout">
     <td>{{workout.type}}</td>
     <td>{{workout.name}}</td>
     <td>{{workout.sets}}</td>
