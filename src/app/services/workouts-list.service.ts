@@ -14,6 +14,7 @@ export class WorkoutsListService {
     workout.title = title;
     this.WorkoutPlan.push(workout);
     this.PlanUpdated.emit(this.WorkoutPlan);
+    console.log(this.WorkoutPlan);
   }
 
   getWorkoutPlan(){
@@ -21,7 +22,7 @@ export class WorkoutsListService {
   }
 
   getWorkoutTitles(){
-    return this.WorkoutPlan.map((el) => el.title));
+    return this.WorkoutPlan.map(el => el.title));
   }
 
   getWorkout(id){

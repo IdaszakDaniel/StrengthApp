@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material';
 
 import { AddWorkoutService } from './services/add-workout.service';
 import { WorkoutsListService } from './services/workouts-list.service';
+import { WorkoutDaysService } from './services/workout-days.service';
+
 
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     AddWorkoutService,
-    WorkoutsListService
+    WorkoutsListService,
+    WorkoutDaysService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as moment from 'moment';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-set-date',
@@ -16,6 +17,7 @@ export class SetDateComponent implements OnInit {
   tommorowDate: date = moment().add(1, 'days').format('LL');
   yesterdayDate: date = moment().add(-1, 'days').format('LL');
   date: any;
+  NextDay: EventEmitter<any> = new EventEmitter();
 
   ngOnInit() {
     this.date = this.setDate();
@@ -24,12 +26,13 @@ export class SetDateComponent implements OnInit {
   nextDate(x){
     this.currentDate = moment(this.currentDate).add(x, 'days').format('LL');
     this.date = this.setDate();
+    this.NextDay.emit();
   }
 
   setDate(){
-    if(this.currentDate == this.todayDate) return "Dzisiaj";
-    if(this.currentDate == this.tommorowDate) return "Jutro";
-    if(this.currentDate == this.yesterdayDate) return "Wczoraj";
+    if(this.currentDate == this.todayDate) return "Today";
+    if(this.currentDate == this.tommorowDate) return "Tommorow";
+    if(this.currentDate == this.yesterdayDate) return "Yesterday";
     return this.currentDate;
   }
 
