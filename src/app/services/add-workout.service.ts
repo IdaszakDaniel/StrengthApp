@@ -27,7 +27,8 @@ export class AddWorkoutService {
   }
 
   editWorkout(el){
-    this.workout = el;
+    this.workout.title = el.title;
+    el.workout.map((e) => this.workout.push(e));
     this.workoutUpdated.emit(this.workout);
   }
 
