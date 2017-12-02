@@ -9,9 +9,15 @@ export class WorkoutDaysService {
   constructor() { }
 
   setDay(el, date){
-    this.WorkoutDays.push(this.id, el, date);
+    this.WorkoutDays.push([this.id, el, date]);
     this.id++;
-    console.log(this.WorkoutDays);
+  }
+
+  getDay(date){
+    let obj = this.WorkoutDays.filter(el => el[2] == date);
+    if(obj != undefined){
+      return (obj.length > 0) ? obj[0] : undefined;
+    }
   }
 
 }

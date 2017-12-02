@@ -30,15 +30,22 @@ export class TodayWorkoutComponent implements OnInit {
     this.setDate.NextDay.subscribe(
       () => {
         this.chooseWorkout = true;
+        this.fetchDay();
       }
     );
+  }
 
+  fetchDay(){
+      let obj = this.workoutDays.getDay(this.setDate.getCurrentDate());
+      if(obj !== undefined){
+        this.currentWorkout = obj[1];
+        this.chooseWorkout = false;
+      }
   }
 
   getWorkout(id){
     this.chooseWorkout = false;
     this.currentWorkout = this.workoutsList.getWorkout(id);
-    //console.log(this.setDate.getCurrentDate()); //date data
     this.workoutDays.setDay(this.currentWorkout, this.setDate.getCurrentDate());
   }
 
