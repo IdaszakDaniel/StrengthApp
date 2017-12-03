@@ -1,3 +1,33 @@
 .containerNewWorkout{
   margin: 20px;
+  .containerNewWorkout__form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    .form__head{
+      .head__btn{
+        margin-left: 70%;
+      }
+    }
+    .form__body{
+      .body__btn{
+        margin: 10px;
+        margin-left: 50%;
+      }
+    }
+  }
+  .containerNewWorkout__cards{
+    .cards__workout{
+      margin: 10px;
+      .workout__btn{
+        margin-left: auto;
+      }
+    }
+  }
+  .containerNewWorkout__btn{
+    width: 100%;
+  }
+}
+.formField{
+  width: 100%;
 }

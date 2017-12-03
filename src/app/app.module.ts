@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material';
-import { MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatCheckboxModule, MatCardModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 
 import { AddWorkoutService } from './services/add-workout.service';
@@ -50,7 +50,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [
     AddWorkoutService,

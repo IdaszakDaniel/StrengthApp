@@ -16,6 +16,7 @@ export class NewWorkoutComponent implements OnInit {
   exercises: any;
   plans: any;
   initialState: boolean = true;
+  addingWorkout: boolean = false;
   title: string;
   addWorkout;
   workoutsList;
@@ -47,6 +48,10 @@ export class NewWorkoutComponent implements OnInit {
 
   newWorkout(){
     this.initialState = false;
+  }
+
+  setTitle(){
+    this.addingWorkout = true;
   }
 
   addExercise(){
