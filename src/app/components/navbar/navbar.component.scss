@@ -1,4 +1,10 @@
 .navbar{
   padding-top: 2px;
   font-size: 20px;
+  .navbar__link{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: none;
+  }
 }

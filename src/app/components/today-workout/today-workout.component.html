@@ -1,39 +1,41 @@
-<app-set-date></app-set-date>
+<div class="todayWorkoutContainer">
+  <app-set-date></app-set-date>
 
-<div *ngIf="chooseWorkout">
-  <table *ngFor="let plan of plans">
-    <button (click)="getWorkout(plan.title)">{{plan.title}}</button>
-    <tr>
-      <th>TYPE</th>
-      <th>NAME</th>
-      <th>SETS</th>
-      <th>REPS</th>
-    </tr>
-    <tr *ngFor="let workout of plan.workout">
-      <td>{{workout.type}}</td>
-      <td>{{workout.name}}</td>
-      <td>{{workout.sets}}</td>
-      <td>{{workout.reps}}</td>
-    </tr>
-  </table>
-</div>
+  <div *ngIf="chooseWorkout">
+    <table *ngFor="let plan of plans">
+      <button (click)="getWorkout(plan.title)">{{plan.title}}</button>
+      <tr>
+        <th>TYPE</th>
+        <th>NAME</th>
+        <th>SETS</th>
+        <th>REPS</th>
+      </tr>
+      <tr *ngFor="let workout of plan.workout">
+        <td>{{workout.type}}</td>
+        <td>{{workout.name}}</td>
+        <td>{{workout.sets}}</td>
+        <td>{{workout.reps}}</td>
+      </tr>
+    </table>
+  </div>
 
-<div *ngIf="!chooseWorkout">
-  <h3>CURRENT WORKOUT:</h3>
+  <div *ngIf="!chooseWorkout">
+    <h3>CURRENT WORKOUT:</h3>
 
-  <table>
-    {{currentWorkout.title}}
-    <tr>
-      <th>TYPE</th>
-      <th>NAME</th>
-      <th>SETS</th>
-      <th>REPS</th>
-    </tr>
-    <tr *ngFor="let workout of currentWorkout.workout">
-      <td>{{workout.type}}</td>
-      <td>{{workout.name}}</td>
-      <td>{{workout.sets}}</td>
-      <td>{{workout.reps}}</td>
-    </tr>
-  </table>
+    <table>
+      {{currentWorkout.title}}
+      <tr>
+        <th>TYPE</th>
+        <th>NAME</th>
+        <th>SETS</th>
+        <th>REPS</th>
+      </tr>
+      <tr *ngFor="let workout of currentWorkout.workout">
+        <td>{{workout.type}}</td>
+        <td>{{workout.name}}</td>
+        <td>{{workout.sets}}</td>
+        <td>{{workout.reps}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

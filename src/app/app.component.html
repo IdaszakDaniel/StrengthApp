@@ -1,13 +1,17 @@
 <div class="AppContainer">
+
+  <div class="navigation">
+    <span class="fa fa-bars fa-2x navigation__menuIcon" aria-hidden="true" (click)="sidenav.open()"></span>
+  </div>
+
   <div class="sidemenu" (mouseenter)="sidenav.open()" >
     <p><span class="fa fa-file-o fa-2x sidemenu-item" aria-hidden="true"></span></p>
     <p><span class="fa fa-pie-chart fa-2x sidemenu-item" aria-hidden="true"></span></p>
     <p><span class="fa fa-plus fa-2x sidemenu-item" aria-hidden="true"></span></p>
-
   </div>
 
-
   <mat-sidenav-container class="example-container">
+
     <mat-sidenav #sidenav class="example-sidenav" (mouseleave)="sidenav.close()">
       <app-navbar (click)="sidenav.close()"></app-navbar>
     </mat-sidenav>
@@ -17,4 +21,5 @@
     </div>
 
   </mat-sidenav-container>
+
 </div>

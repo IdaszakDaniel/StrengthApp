@@ -3,21 +3,32 @@
   width: 100%;
   height: 100%;
 }
+
+.navigation{
+  background-color: #275FA2;
+  width: 100%;
+  color: white;
+  .navigation__menuIcon{
+    margin: 12px;
+  }
+}
+
 .sidemenu{
   display: inline-block;
   vertical-align: top;
   height: 100vh;
-  width: 6vw;
   background-color: #275FA2;
+  color: white;
   .sidemenu-item{
     padding: 0px 10px;
   }
 }
 .example-container {
   display: inline-block;
-  width: 94.5vw;
-  margin-left: -2vw;
+  width: 80%;
+  margin-left: -5.5px;
   height: 100vh;
+  background-color: white;
 }
 
 .example-sidenav-content {
@@ -27,4 +38,10 @@
 
 .example-sidenav {
   background-color: #275FA2;
+}
+
+@media only screen and (max-width: 400px) {
+  .sidemenu{
+    display: none;
+  }
 }
