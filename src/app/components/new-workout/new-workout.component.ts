@@ -25,7 +25,6 @@ export class NewWorkoutComponent implements OnInit {
   constructor(addWorkoutService:AddWorkoutService, workoutsListService:WorkoutsListService) {
     this.addWorkout = addWorkoutService;
     this.workoutsList = workoutsListService;
-    this.workoutsList.fetchWorkouts();
   }
 
   ngOnInit() {
