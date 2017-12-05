@@ -1,41 +1,52 @@
 <div class="todayWorkoutContainer">
   <app-set-date></app-set-date>
 
-  <div *ngIf="chooseWorkout">
-    <table *ngFor="let plan of plans">
-      <button (click)="getWorkout(plan.title)">{{plan.title}}</button>
-      <tr>
-        <th>TYPE</th>
-        <th>NAME</th>
-        <th>SETS</th>
-        <th>REPS</th>
-      </tr>
-      <tr *ngFor="let workout of plan.workout">
-        <td>{{workout.type}}</td>
-        <td>{{workout.name}}</td>
-        <td>{{workout.sets}}</td>
-        <td>{{workout.reps}}</td>
-      </tr>
-    </table>
+  <div *ngIf="chooseWorkout" >
+    <mat-card class="cards__workout" *ngFor="let plan of plans">
+      <button mat-button (click)="getWorkout(plan.title)"><h3>{{plan.title}}</h3></button>
+      <table>
+        <tr>
+          <th>TYPE</th>
+          <th>NAME</th>
+          <th>SETS</th>
+          <th>REPS</th>
+        </tr>
+        <tr *ngFor="let workout of plan.workout">
+          <td>{{workout.type}}</td>
+          <td>{{workout.name}}</td>
+          <td>{{workout.sets}}</td>
+          <td>{{workout.reps}}</td>
+        </tr>
+      </table>
+    </mat-card>
   </div>
 
   <div *ngIf="!chooseWorkout">
-    <h3>CURRENT WORKOUT:</h3>
+    <mat-card class="cards__workout">
+      <h3>{{currentWorkout.title}}</h3>
+      <table>
+        <tr>
+          <th>TYPE</th>
+          <th>NAME</th>
+          <th>SETS</th>
+          <th>REPS</th>
+        </tr>
+        <tr *ngFor="let workout of currentWorkout.workout">
+          <td>{{workout.type}}</td>
+          <td>{{workout.name}}</td>
+          <td>{{workout.sets}}</td>
+          <td>{{workout.reps}}</td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>
 
-    <table>
-      {{currentWorkout.title}}
-      <tr>
-        <th>TYPE</th>
-        <th>NAME</th>
-        <th>SETS</th>
-        <th>REPS</th>
-      </tr>
-      <tr *ngFor="let workout of currentWorkout.workout">
-        <td>{{workout.type}}</td>
-        <td>{{workout.name}}</td>
-        <td>{{workout.sets}}</td>
-        <td>{{workout.reps}}</td>
-      </tr>
-    </table>
+  <div>
+    <div *ngFor="let workout of currentWorkout.workout">
+      <span>{{workout.type}}</span>
+      <span>{{workout.name}}</span>
+      <span>{{workout.sets}}</span>
+      <span>{{workout.reps}}</span>
+    </div>
   </div>
 </div>

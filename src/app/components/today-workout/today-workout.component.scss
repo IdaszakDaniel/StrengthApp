@@ -1,3 +1,10 @@
 .todayWorkoutContainer{
-  margin: 20px;
+  width: 100%;
+  .cards__workout{
+    margin: 10px;
+    margin-left: 30px;
+    .workout__btn{
+      margin-left: auto;
+    }
+  }
 }

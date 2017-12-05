@@ -1,0 +1,10 @@
+.setDateContainer{
+    background-color: grey;
+    min-width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}

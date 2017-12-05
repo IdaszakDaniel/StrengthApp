@@ -1,3 +1,5 @@
-<p>
-  <button (click)="nextDate(-1)"><</button>{{date}} <button (click)="nextDate(1)">></button>
-</p>
+<div class="setDateContainer">
+  <button flex="33" (click)="nextDate(-1)"><span class="fa fa-arrow-left" aria-hidden="true"></span></button>
+  <span flex="33" >{{date}}</span>
+  <button flex="33" (click)="nextDate(1)"><span class="fa fa-arrow-right" aria-hidden="true"></span></button>
+</div>
