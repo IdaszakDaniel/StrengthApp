@@ -29,6 +29,7 @@ export class TodayWorkoutComponent implements OnInit {
 
     this.setDate.NextDay.subscribe(
       () => {
+        this.currentWorkout = [];
         this.chooseWorkout = true;
         this.fetchDay();
       }
