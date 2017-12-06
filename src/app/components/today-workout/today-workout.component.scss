@@ -2,7 +2,8 @@
   width: 100%;
   .cards__workout{
     margin: 10px;
-    margin-left: 30px;
+    margin-left: 20px;
+    max-width: 280px;
     .workout__btn{
       margin-left: auto;
     }
@@ -16,7 +17,7 @@
   display: inline-block;
 
   .fields-reps{
-    width: 40px;
+    width: 70px;
   }
 }
 

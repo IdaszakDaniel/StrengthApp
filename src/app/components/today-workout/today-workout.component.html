@@ -6,10 +6,10 @@
       <button mat-button (click)="getWorkout(plan.title)"><h3>{{plan.title}}</h3></button>
       <table>
         <tr>
-          <th>TYPE</th>
-          <th>NAME</th>
-          <th>SETS</th>
-          <th>REPS</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
         <tr *ngFor="let workout of plan.workout">
           <td>{{workout.type}}</td>
@@ -26,10 +26,10 @@
       <h3>{{currentWorkout.title}}</h3>
       <table>
         <tr>
-          <th>TYPE</th>
-          <th>NAME</th>
-          <th>SETS</th>
-          <th>REPS</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
         <tr *ngFor="let workout of currentWorkout.workout">
           <td>{{workout.type}}</td>
