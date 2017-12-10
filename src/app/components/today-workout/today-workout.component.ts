@@ -12,6 +12,7 @@ import { SetDateComponent } from '../set-date/set-date.component';
 export class TodayWorkoutComponent implements OnInit {
 
   workoutsList;
+  workoutDays;
   titles: string[];
   plans: any = [];
   currentWorkout: any = [];

@@ -12,10 +12,10 @@ export class SetDateComponent implements OnInit {
 
   constructor() { }
 
-  currentDate: Date = moment().format('LL');
-  todayDate: date = moment().format('LL');
-  tommorowDate: date = moment().add(1, 'days').format('LL');
-  yesterdayDate: date = moment().add(-1, 'days').format('LL');
+  currentDate: string = moment().format('LL');
+  todayDate: string = moment().format('LL');
+  tommorowDate: string = moment().add(1, 'days').format('LL');
+  yesterdayDate: string = moment().add(-1, 'days').format('LL');
   date: any;
   NextDay: EventEmitter<any> = new EventEmitter();
 

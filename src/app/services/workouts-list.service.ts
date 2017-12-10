@@ -30,7 +30,7 @@ export class WorkoutsListService {
   }
 
   getWorkoutTitles(){
-    return this.WorkoutPlan.map(el => el.title));
+    return this.WorkoutPlan.map(el => el.title);
   }
 
   getWorkout(id){
