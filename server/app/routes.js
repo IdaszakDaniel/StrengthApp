@@ -188,6 +188,20 @@ module.exports = function(app, passport) {
     });
 
 
+            var Nerd = require('./models/nerd');
+            app.get('/api/nerds', isLoggedIn, function(req, res) {
+                // use mongoose to get all nerds in the database
+                Nerd.find(function(err, nerds) {
+
+                    // if there is an error retrieving, send the error.
+                                    // nothing after res.send(err) will execute
+                    if (err)
+                        res.send(err);
+
+                    res.json(nerds); // return all nerds in JSON format
+                });
+            });
+
 };
 
 // route middleware to ensure user is logged in

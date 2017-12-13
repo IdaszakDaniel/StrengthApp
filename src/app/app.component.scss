@@ -11,6 +11,15 @@
   .navigation__menuIcon{
     margin: 12px;
   }
+  .navigation__menuLogout{
+    float: right;
+    margin: 12px;
+    text-transform: uppercase;
+    .menuLogout--link{
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
 
 .sidemenu{
