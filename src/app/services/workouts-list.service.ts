@@ -15,7 +15,14 @@ export class WorkoutsListService {
 
   fetchWorkouts(){
     this.resource.getData().subscribe(el => {
-  		this.WorkoutPlan = el;
+      //el[0].forEach(item => this.WorkoutPlan.push(item));
+      //this.WorkoutPlan = [];
+      for (let item in el[0]) {
+        if(el[0][item].hasOwnProperty('title')){
+          this.WorkoutPlan.push(el[0][item]);
+        }
+      }
+  		//this.WorkoutPlan = el[0];
   	});
     this.PlanUpdated.emit(this.WorkoutPlan);
   }
