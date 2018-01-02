@@ -1,6 +1,6 @@
 <div class="AppContainer">
 
-  <div class="navigation">
+  <!-- <div class="navigation">
     <span class="fa fa-bars fa-2x navigation__menuIcon" aria-hidden="true" (click)="sidenav.open()"></span>
     <button mat-button class="navigation__menuLogout"><a href="http://localhost:8080/logout" class="menuLogout--link">logout</a></button>
   </div>
@@ -21,6 +21,48 @@
       <router-outlet></router-outlet>
     </div>
 
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light AppComponent__navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li><a href="#" class="navbar__link" routerLink="/">home</a></li>
+        <li><a href="#" class="navbar__link" routerLink="stats">stats</a></li>
+        <li><a href="#" class="navbar__link" routerLink="today">today</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+  <div class="BottomNavbar">
+    <div class="container">
+      <div class="row">
+        <div class="col BottomNavbar__button">
+          <a href="#" routerLink="/">
+            <span class="fa fa-file-o fa-2x sidemenu-item" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="col BottomNavbar__button">
+          <a href="#" routerLink="stats">
+            <span class="fa fa-pie-chart fa-2x sidemenu-item" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="col BottomNavbar__button">
+          <a href="#" routerLink="today">
+            <span class="fa fa-plus fa-2x sidemenu-item" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
 
 </div>
