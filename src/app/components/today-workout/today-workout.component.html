@@ -41,15 +41,15 @@
     </mat-card>
   </div>
 
-  <div *ngFor="let workout of currentWorkout.workout" class="todayWorkoutContainer__inputs">
+  <div *ngFor="let exercise of currentWorkout.workout" class="todayWorkoutContainer__inputs">
     <div>
-      <span>{{workout.type}}</span>
-      <span>{{workout.name}}</span>
+      <span>{{exercise.type}}</span>
+      <span>{{exercise.name}}</span>
     </div>
-    <div *ngFor="let rep of workout.reps" class="container-fields">
+    <div *ngFor="let rep of exercise.reps; let i = index" class="container-fields">
       {{rep}} x
       <mat-form-field class="fields-reps">
-        <input matInput placeholder="Weight">
+        <input matInput placeholder="Weight" [(ngModel)]="exercise.exercise[i]" name="weight{{i}}">
       </mat-form-field>
     </div>
   </div>

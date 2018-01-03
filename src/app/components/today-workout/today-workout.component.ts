@@ -14,6 +14,7 @@ export class TodayWorkoutComponent implements OnInit {
   workoutsList;
   workoutDays;
   titles: string[];
+  weight: any[] = [];
   plans: any = [];
   currentWorkout: any = [];
   chooseWorkout: boolean = true;
@@ -48,7 +49,11 @@ export class TodayWorkoutComponent implements OnInit {
   getWorkout(id){
     this.chooseWorkout = false;
     this.currentWorkout = this.workoutsList.getWorkout(id);
+    this.currentWorkout.workout.forEach(el => {
+      el.exercise = el.reps.map(el => "");
+    });
     this.workoutDays.setDay(this.currentWorkout, this.setDate.getCurrentDate());
+    this.currentWorkout.id = this.workoutDays.getId();
   }
 
 }

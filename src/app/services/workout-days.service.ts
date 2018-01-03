@@ -13,6 +13,10 @@ export class WorkoutDaysService {
     this.id++;
   }
 
+  getId(){
+    return this.id - 1;
+  }
+
   getDay(date){
     let obj = this.WorkoutDays.filter(el => el[2] == date);
     if(obj != undefined){
