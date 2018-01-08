@@ -15,11 +15,9 @@ export class WorkoutsListService {
 
   fetchWorkouts(){
     this.resource.getData().subscribe(el => {
-      //el[0].forEach(item => this.WorkoutPlan.push(item));
-      //this.WorkoutPlan = [];
-      for (let item in el[0]) {
-        if(el[0][item].hasOwnProperty('title')){
-          this.WorkoutPlan.push(el[0][item]);
+      for (let item in el) {
+        if(el[item].hasOwnProperty('title')){
+          this.WorkoutPlan.push(el[item]);
         }
       }
   		//this.WorkoutPlan = el[0];
@@ -29,6 +27,7 @@ export class WorkoutsListService {
 
   setWorkoutDay(workout, title){
     this.WorkoutPlan.push({title, workout});
+    this.resource.postData({title, workout});
     this.PlanUpdated.emit(this.WorkoutPlan);
   }
 

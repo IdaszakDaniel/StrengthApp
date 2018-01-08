@@ -1,5 +1,8 @@
 module.exports = function(app, passport) {
 
+
+  const path = require('path');
+  const express = require('express');
 // normal routes ===============================================================
 
     // show the home page (will also have our login links)
@@ -35,9 +38,14 @@ module.exports = function(app, passport) {
             res.render('login.ejs', { message: req.flash('loginMessage') });
         });
 
+        app.use(express.static(path.join(__dirname, 'dist')));
+        app.get('/ui', isLoggedIn, function(req, res) {
+            res.sendFile(path.join(__dirname + '/dist/index.html'));
+        });
+
         // process the login form
         app.post('/login', passport.authenticate('local-login', {
-            successRedirect : 'http://localhost:4200', // redirect to the secure profile section
+            successRedirect : '/ui', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -188,38 +196,81 @@ module.exports = function(app, passport) {
     });
 
 
-            var Nerd = require('./models/nerd');
-            app.get('/api/nerds', function(req, res) {
-                // use mongoose to get all nerds in the database
-                console.log("reqres:",req.user);
-                Nerd.find(function(err, nerds) {
+            // var Nerd = require('./models/nerd');
+            // app.get('/api/nerds', function(req, res) {
+            //     // use mongoose to get all nerds in the database
+            //     console.log("reqres:",req.user);
+            //     Nerd.find(function(err, nerds) {
+            //
+            //         // if there is an error retrieving, send the error.
+            //                         // nothing after res.send(err) will execute
+            //         if (err)
+            //             res.send(err);
+            //
+            //         res.json(nerds); // return all nerds in JSON format
+            //     });
+            // });
 
-                    // if there is an error retrieving, send the error.
-                                    // nothing after res.send(err) will execute
+            var Routines = require('./models/routines');
+            app.get('/api/workouts', isLoggedIn, function(req, res) {
+              console.log("MYUSER", req.session.passport.user);
+                Routines.find({_userId : req.session.passport.user}, function(err, nerds) {
                     if (err)
                         res.send(err);
-
-                    res.json(nerds); // return all nerds in JSON format
+                    res.json(nerds);
                 });
             });
 
-            var Workouts = require('./models/workouts');
-            app.get('/api/workouts', function(req, res) {
-                Workouts.find(function(err, nerds) {
+            app.post('/api/workouts', function(req, res){
+              workouts = new Workouts;
+              workouts.workouts = 'lamiglowki'
+              workouts.save(function(err){
+                if(err) res.send(err);
+                res.json(task);
+                res.json({ message: 'Bear created!' });
+              })
+            })
 
-                    // if there is an error retrieving, send the error.
-                                    // nothing after res.send(err) will execute
-                    if (err)
-                        res.send(err);
+            // app.route('/tasks')
+            //   .get(todoList.list_all_tasks)
+            //   .post(todoList.create_a_task);
+            //
+            //
+            // app.route('/tasks/:taskId')
+            //   .get(todoList.read_a_task)
+            //   .put(todoList.update_a_task)
+            //   .delete(todoList.delete_a_task);
 
-                    res.json(nerds); // return all nerds in JSON format
-                });
+
+            app.route('/workouts').post((req, res) => {
+              let new_task = new Workouts(req.body);
+              new_task.save((err, task) => {
+                            if(err) {
+                              console.log(err);
+                              res.send(err);
+                            }
+                            res.json(task);
+                          });
+            });
+
+            app.route('/workouts/:taskId').put((req, res) => {
+              console.log(req.params.taskId, req.body);
+              Workouts.findOneAndUpdate({_id: req.params.taskId},
+                                        {$push : req.body},
+                                        {safe: true, upsert:true},
+                                        (err) => {
+                                          if(err) {
+                                            console.log(err);
+                                            res.send(err);
+                                          }
+                                        });
             });
 
 };
 
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
+  //console.log(req.session);
     if (req.isAuthenticated())
         return next();
 
