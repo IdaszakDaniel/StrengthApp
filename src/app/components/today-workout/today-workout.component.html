@@ -43,8 +43,10 @@
 
   <div *ngFor="let exercise of currentWorkout.workout" class="todayWorkoutContainer__inputs">
     <div>
-      <span>{{exercise.type}}</span>
-      <span>{{exercise.name}}</span>
+      <h3>{{exercise.name}}</h3>
+      <p>Body Part: {{exercise.type}}</p>
+      <p>One Rep Max: {{exercise.max}}</p>
+      <p>Warmup: {{exercise.warmup}}</p>
     </div>
     <div *ngFor="let rep of exercise.reps; let i = index" class="container-fields">
       {{rep}} x

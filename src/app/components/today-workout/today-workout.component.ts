@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { WorkoutsListService } from '../../services/workouts-list.service';
 import { WorkoutDaysService } from '../../services/workout-days.service';
+import { UserSettingsService } from '../../services/user-settings.service';
 import { SetDateComponent } from '../set-date/set-date.component';
 
 @Component({
@@ -20,14 +21,16 @@ export class TodayWorkoutComponent implements OnInit {
   chooseWorkout: boolean = true;
   @ViewChild(SetDateComponent) setDate:SetDateComponent;
 
-  constructor(workoutsListService:WorkoutsListService, workoutDaysService:WorkoutDaysService) {
+  constructor(workoutsListService:WorkoutsListService, workoutDaysService:WorkoutDaysService, userSettingsService: UserSettingsService) {
     this.workoutsList = workoutsListService;
     this.workoutDays = workoutDaysService;
+    this.userSettings = userSettingsService;
   }
 
   ngOnInit() {
     this.titles = this.workoutsList.getWorkoutTitles();
     this.plans = this.workoutsList.getWorkoutPlan();
+    this.maxes = this.userSettings.getMaxes();
 
     this.setDate.NextDay.subscribe(
       () => {
@@ -54,6 +57,17 @@ export class TodayWorkoutComponent implements OnInit {
     });
     this.workoutDays.setDay(this.currentWorkout, this.setDate.getCurrentDate());
     this.currentWorkout.id = this.workoutDays.getId();
+    this.setAdditionalFields();
+  }
+
+  setAdditionalFields() {
+    this.currentWorkout.workout.forEach(el => {
+      if(el.name == "Benchpress") el.max = this.maxes.bench;
+      if(el.name == "Press") el.max = this.maxes.press;
+      if(el.name == "Squat") el.max = this.maxes.squat;
+      if(el.name == "Deadlift") el.max = this.maxes.dl;
+      el.warmup = `5x${Math.floor(0.5*el.max)} 3x${Math.floor(0.7*el.max)} 1x${Math.floor(0.9*el.max)}`;
+    });
   }
 
 }
