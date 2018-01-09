@@ -13,6 +13,7 @@ import { AddWorkoutService } from './services/add-workout.service';
 import { WorkoutsListService } from './services/workouts-list.service';
 import { WorkoutDaysService } from './services/workout-days.service';
 import { ResourceService } from './services/resource.service';
+import { UserSettingsService } from './services/user-settings.service';
 
 import { AppComponent } from './app.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
@@ -21,11 +22,13 @@ import { StatsComponent } from './components/stats/stats.component';
 import { RepsSetsComponent } from './components/reps-sets/reps-sets.component';
 import { TodayWorkoutComponent } from './components/today-workout/today-workout.component';
 import { SetDateComponent } from './components/set-date/set-date.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
   {path: 'stats', component: StatsComponent},
-  {path: 'today', component: TodayWorkoutComponent}
+  {path: 'today', component: TodayWorkoutComponent},
+  {path: 'settings', component: SettingsComponent}
 ];
 
 @NgModule({
@@ -36,7 +39,8 @@ const appRoutes: Routes = [
     StatsComponent,
     RepsSetsComponent,
     TodayWorkoutComponent,
-    SetDateComponent
+    SetDateComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ const appRoutes: Routes = [
     AddWorkoutService,
     WorkoutsListService,
     WorkoutDaysService,
-    ResourceService
+    ResourceService,
+    UserSettingsService
   ],
   bootstrap: [AppComponent]
 })

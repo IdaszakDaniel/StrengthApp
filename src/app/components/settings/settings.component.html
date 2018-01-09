@@ -1,0 +1,54 @@
+
+<div class="container">
+  <h3>Log your Rep Maxes:</h3>
+  <div class="col">
+    <mat-form-field class="formField">
+      <input matInput placeholder="Reps" [(ngModel)]="pressReps" name="pressReps">
+    </mat-form-field>x
+    <mat-form-field class="formField">
+      <input matInput placeholder="Press" [(ngModel)]="press" name="press">
+    </mat-form-field>kilograms
+  </div>
+
+
+  <div class="col">
+    <mat-form-field class="formField">
+      <input matInput placeholder="Reps" [(ngModel)]="benchReps" name="benchReps">
+    </mat-form-field>x
+    <mat-form-field class="formField">
+      <input matInput placeholder="Benchpress" [(ngModel)]="bench" name="bench">
+    </mat-form-field>kilograms
+  </div>
+
+
+  <div class="col">
+    <mat-form-field class="formField">
+      <input matInput placeholder="Reps" [(ngModel)]="squatReps" name="squatReps">
+    </mat-form-field>x
+    <mat-form-field class="formField">
+      <input matInput placeholder="Squat" [(ngModel)]="squat" name="squat">
+    </mat-form-field>kilograms
+  </div>
+
+
+  <div class="col">
+    <mat-form-field class="formField">
+      <input matInput placeholder="Reps" [(ngModel)]="dlReps" name="dlReps">
+    </mat-form-field>x
+    <mat-form-field class="formField">
+      <input matInput placeholder="Deadlift" [(ngModel)]="dl" name="dl">
+    </mat-form-field>kilograms
+  </div>
+
+
+  <button mat-raised-button color="primary" (click)="saveLifts()">SAVE LIFTS</button>
+
+  <div class="col" *ngIf="estimates">
+    <h3>Estimated One Rep Maxes:</h3>
+    <p>Press:<span>{{this.pressMax}}</span></p>
+    <p>Bench:<span>{{this.benchMax}}</span></p>
+    <p>Squat:<span>{{this.squatMax}}</span></p>
+    <p>Deadlift:<span>{{this.dlMax}}</span></p>
+  </div>
+
+</div>

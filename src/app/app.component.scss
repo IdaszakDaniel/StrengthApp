@@ -5,6 +5,14 @@
   position: relative;
   .AppComponent__navbar{
     background-color: #3949AB !important;
+    .navbar-toggler{
+      //background-color: white;
+      border: none;
+      color: white;
+    }
+    .navbar__link{
+      color: white;
+    }
   }
 }
 

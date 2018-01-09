@@ -33,10 +33,11 @@
         <li><a href="#" class="navbar__link" routerLink="/">home</a></li>
         <li><a href="#" class="navbar__link" routerLink="stats">stats</a></li>
         <li><a href="#" class="navbar__link" routerLink="today">today</a></li>
-          <button mat-button class="navigation__menuLogout"><a href="http://localhost:8080/logout" class="menuLogout--link">logout</a></button>
+        <li><a href="#" class="navbar__link" routerLink="settings">settings</a></li>
       </ul>
-
     </div>
+
+    <a href="/logout" class="navbar__link">logout</a>
   </nav>
 
   <router-outlet></router-outlet>
@@ -57,6 +58,11 @@
         <div class="col BottomNavbar__button">
           <a href="#" routerLink="today">
             <span class="fa fa-plus fa-2x sidemenu-item" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="col BottomNavbar__button">
+          <a href="#" routerLink="settings">
+            <span class="fa fa-cog fa-2x sidemenu-item" aria-hidden="true"></span>
           </a>
         </div>
       </div>
