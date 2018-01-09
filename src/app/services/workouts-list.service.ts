@@ -14,13 +14,13 @@ export class WorkoutsListService {
   }
 
   fetchWorkouts(){
+    this.WorkoutPlan = [];
     this.resource.getData().subscribe(el => {
       for (let item in el) {
         if(el[item].hasOwnProperty('title')){
           this.WorkoutPlan.push(el[item]);
         }
       }
-  		//this.WorkoutPlan = el[0];
   	});
     this.PlanUpdated.emit(this.WorkoutPlan);
   }

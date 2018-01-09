@@ -23,6 +23,7 @@ export class SettingsComponent implements OnInit {
   squatMax: number;
   dlMax: number;
   estimates: boolean = false;
+  userSettings;
 
   constructor(userSettingsService: UserSettingsService) {
     this.userSettings = userSettingsService;

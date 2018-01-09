@@ -1,9 +1,9 @@
+<app-set-date></app-set-date>
 <div class="todayWorkoutContainer">
-  <app-set-date></app-set-date>
 
   <div *ngIf="chooseWorkout" >
     <mat-card class="cards__workout" *ngFor="let plan of plans">
-      <button mat-button (click)="getWorkout(plan.title)"><h3>{{plan.title}}</h3></button>
+      <button mat-button (click)="getWorkout(plan.title)" class="workout__btn"><h3>{{plan.title}}</h3></button>
       <table>
         <tr>
           <th></th>

@@ -18,7 +18,6 @@ export class NewWorkoutComponent implements OnInit {
   initialState: boolean = true;
   addingWorkout: boolean = false;
   title: string;
-  fetched: boolean = false;
   addWorkout;
   workoutsList;
   @ViewChild(RepsSetsComponent) repsSets:RepsSetsComponent;
@@ -30,7 +29,7 @@ export class NewWorkoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bodyParts = ['bicep','back','calves','delts','traps'];
+    this.bodyParts = ['bicep','back','calves','chest','delts','legs','shoulders','traps'];
 
     this.addWorkout.workoutUpdated.subscribe(
       (exercises) => {
@@ -47,10 +46,7 @@ export class NewWorkoutComponent implements OnInit {
   }
 
   ngAfterContentInit(){
-    if(!this.fetched) {
       this.workoutsList.fetchWorkouts();
-      this.fetched = true;
-    }
   }
 
   newWorkout(){

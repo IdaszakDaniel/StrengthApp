@@ -17,6 +17,8 @@ export class TodayWorkoutComponent implements OnInit {
   titles: string[];
   weight: any[] = [];
   plans: any = [];
+  maxes: any;
+  userSettings;
   currentWorkout: any = [];
   chooseWorkout: boolean = true;
   @ViewChild(SetDateComponent) setDate:SetDateComponent;

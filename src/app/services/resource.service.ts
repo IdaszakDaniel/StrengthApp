@@ -10,7 +10,7 @@ export class ResourceService {
 
   getData(){
   	return this.http.get('http://localhost:8080/api/workouts').map(res => res.json());
-  }//assets/workout.json
+  }//assets/workout.json http://localhost:8080/api/workouts
 
   postData(el){
     let id = `5a5269663417e70416f1b7c3`;

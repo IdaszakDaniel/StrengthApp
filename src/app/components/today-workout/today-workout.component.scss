@@ -1,12 +1,10 @@
 .todayWorkoutContainer{
-  width: 100%;
-  margin-bottom: 60px; 
+  margin: 20px;
+  margin-bottom: 40px;
   .cards__workout{
     margin: 10px;
-    margin-left: 20px;
-    max-width: 280px;
     .workout__btn{
-      margin-left: auto;
+      padding-left: 0px;
     }
   }
   .todayWorkoutContainer__inputs{
