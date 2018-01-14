@@ -5,7 +5,7 @@ export class AppPage {
   navigateTo() {
     return browser.get('/');
   }
-
+  
   getInitWorkoutBtn() { return element(by.css('.containerNewWorkout__btn')); }
   getInitWorkoutInput(){ return element(by.css('.mat-input-element')); }
   getInitAddBtn(){ return element(by.css('.head__btn > .mat-button-wrapper')); }
@@ -19,6 +19,14 @@ export class AppPage {
   getLastWorkoutTable(number){ return element.all(by.css('.cards__workout')).last()
                                       .all(by.css('tr > td')).get(number); }
 
+  pause() {
+    return browser.sleep(6000);
+  }
+
+  focus(el){
+    browser.executeScript("arguments[0].scrollIntoView();", el.getWebElement());
+  }
+
   testForm(title, sets, reps){
     this.getInitWorkoutBtn().click();
     this.getInitWorkoutInput().sendKeys(title);
@@ -31,13 +39,5 @@ export class AppPage {
     this.focus(this.getSaveWorkoutButton());
     this.getSaveWorkoutButton().click();
     this.focus(this.getLastWorkoutTitle());
-  }
-
-  pause() {
-    return browser.sleep(6000);
-  }
-
-  focus(el){
-    browser.executeScript("arguments[0].scrollIntoView();", el.getWebElement());
   }
 }
