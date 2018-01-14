@@ -57,9 +57,9 @@ export class TodayWorkoutComponent implements OnInit {
     this.currentWorkout.workout.forEach(el => {
       el.exercise = el.reps.map(el => "");
     });
+    this.setAdditionalFields();
     this.workoutDays.setDay(this.currentWorkout, this.setDate.getCurrentDate());
     this.currentWorkout.id = this.workoutDays.getId();
-    this.setAdditionalFields();
   }
 
   setAdditionalFields() {
@@ -69,6 +69,7 @@ export class TodayWorkoutComponent implements OnInit {
       if(el.name == "Squat") el.max = this.maxes.squat;
       if(el.name == "Deadlift") el.max = this.maxes.dl;
       el.warmup = `5x${Math.floor(0.5*el.max)} 3x${Math.floor(0.7*el.max)} 1x${Math.floor(0.9*el.max)}`;
+      //console.log("was?",this.workoutDays.findExercise(el.name));
     });
   }
 

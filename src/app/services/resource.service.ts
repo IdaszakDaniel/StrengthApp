@@ -9,7 +9,7 @@ export class ResourceService {
   }
 
   getData(){
-  	return this.http.get('http://localhost:8080/api/workouts').map(res => res.json());
+  	return this.http.get('assets/workout.json').map(res => res.json());
   }//assets/workout.json http://localhost:8080/api/workouts
 
   postData(el){
