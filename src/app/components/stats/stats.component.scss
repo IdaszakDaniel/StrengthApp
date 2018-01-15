@@ -1,5 +1,15 @@
 .statsContainer{
   margin: 30px;
+  margin-bottom: 60px;
+  .miniCard{
+    width: 49.5%;
+    vertical-align: top;
+    height: 300px;
+    display: inline-block;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
   .musclemodel{
     width: 63vw;
     height: 63vh;

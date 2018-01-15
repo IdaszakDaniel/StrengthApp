@@ -3,19 +3,44 @@
     <h3>Workouts Statistics</h3>
     <img src="/assets/stats.png" style="width:100%" alt="">
   </mat-card> -->
-  <div class="musclemodel">
-    <div class="modelwarning mw0" [ngStyle]="m0"></div>
-    <div class="modelwarning mw1" [ngStyle]="m1" ></div>
-    <div class="modelwarning mw2" [ngStyle]="m2" ></div>
-    <div class="modelwarning mw3" [ngStyle]="m3" ></div>
-    <div class="modelwarning mw4" [ngStyle]="m4" ></div>
-    <div class="modelwarning mw5" [ngStyle]="m5" ></div>
-    <div class="modelwarning mw6" [ngStyle]="m6" ></div>
-    <div class="modelwarning mw7" [ngStyle]="m7" ></div>
-    <div class="modelwarning mw8" [ngStyle]="m8" ></div>
-    <div class="modelwarning mw9" [ngStyle]="m9" ></div>
-    <div class="modelwarning mw10" [ngStyle]="m10" ></div>
-    <div class="modelwarning mw11" [ngStyle]="m11" ></div>
-    <div class="modelwarning mw12" [ngStyle]="m12" ></div>
-  </div>
+  <mat-card>
+    <h2>Weakest Body Parts</h2>
+    <div class="musclemodel">
+      <div class="modelwarning mw0" [ngStyle]="m0"></div>
+      <div class="modelwarning mw1" [ngStyle]="m1" ></div>
+      <div class="modelwarning mw2" [ngStyle]="m2" ></div>
+      <div class="modelwarning mw3" [ngStyle]="m3" ></div>
+      <div class="modelwarning mw4" [ngStyle]="m4" ></div>
+      <div class="modelwarning mw5" [ngStyle]="m5" ></div>
+      <div class="modelwarning mw6" [ngStyle]="m6" ></div>
+      <div class="modelwarning mw7" [ngStyle]="m7" ></div>
+      <div class="modelwarning mw8" [ngStyle]="m8" ></div>
+      <div class="modelwarning mw9" [ngStyle]="m9" ></div>
+      <div class="modelwarning mw10" [ngStyle]="m10" ></div>
+      <div class="modelwarning mw11" [ngStyle]="m11" ></div>
+      <div class="modelwarning mw12" [ngStyle]="m12" ></div>
+    </div>
+  </mat-card>
+
+  <mat-card class="miniCard">
+    <h3>Estimated One Rep Maxes:</h3>
+    <p>Press:<span>{{maxes.press}}</span></p>
+    <p>Bench:<span>{{maxes.bench}}</span></p>
+    <p>Squat:<span>{{maxes.squat}}</span></p>
+    <p>Deadlift:<span>{{maxes.dl}}</span></p>
+  </mat-card>
+
+  <mat-card class="miniCard">
+    <h2>Wilks Counter</h2>
+    <h4>estimated Powerlifting total</h4>
+    {{maxes.press + maxes.bench + maxes.squat}}
+    <h4>estimated Wilks total</h4>
+    {{maxes.press + maxes.bench + maxes.squat - 100}}
+    <h4></h4>
+  </mat-card>
+
+  <mat-card>
+    <app-lift-chart></app-lift-chart>
+  </mat-card>
+
 </div>

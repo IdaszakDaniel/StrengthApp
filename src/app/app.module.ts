@@ -24,6 +24,9 @@ import { TodayWorkoutComponent } from './components/today-workout/today-workout.
 import { SetDateComponent } from './components/set-date/set-date.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { LiftChartComponent } from './components/lift-chart/lift-chart.component';
+
 const appRoutes: Routes = [
   {path: '', component: NewWorkoutComponent},
   {path: 'stats', component: StatsComponent},
@@ -40,7 +43,8 @@ const appRoutes: Routes = [
     RepsSetsComponent,
     TodayWorkoutComponent,
     SetDateComponent,
-    SettingsComponent
+    SettingsComponent,
+    LiftChartComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule
   ],
   providers: [
     AddWorkoutService,

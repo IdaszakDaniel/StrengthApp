@@ -24,12 +24,14 @@ export class StatsComponent implements OnInit {
   m11: any = {"visibility" : "hidden"};
   m12: any = {"visibility" : "hidden"};
   userSettings;
+  maxes: any;
 
   constructor(userSettingsService: UserSettingsService) {
     this.userSettings = userSettingsService;
   }
 
   ngOnInit() {
+    this.maxes = this.userSettings.getMaxes();
     this.weaknesses = this.userSettings.getWeaknesses();
     this.m0 = {"visibility" : "hidden"};
     this.m1 = {"visibility" : "hidden"};
@@ -69,6 +71,21 @@ export class StatsComponent implements OnInit {
       this.m7 = {"visibility" : "visible"};
       this.m9 = {"visibility" : "visible"};
     }
+  }
+
+  wilksTotal(){
+    const arr = [
+      -216.0475144,
+      16.2606339,
+      -0.002388645,
+      -0.00113732,
+      7.01863E-06,
+      -1.291E-08
+    ];
+
+      var w = 800;
+      var coeff = 500 / arr.reduce((p, c, i) => p + (c * Math.pow(w, i)));
+      console.log("wilski",300*coeff);
   }
 
 }
