@@ -1,3 +1,84 @@
 .statsContainer{
   margin: 30px;
+  .musclemodel{
+    width: 63vw;
+    height: 63vh;
+    margin: 0 auto;
+    background-image: url('/assets/model.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    .modelwarning{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
+    .mw0{
+      background-image: url('/assets/chest.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw1{
+      background-image: url('/assets/abs.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw2{
+      background-image: url('/assets/q.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw3{
+      background-image: url('/assets/hamstrings.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw4{
+      background-image: url('/assets/forearms.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw5{
+      background-image: url('/assets/glutes.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw6{
+      background-image: url('/assets/erector.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw7{
+      background-image: url('/assets/lats.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw8{
+      background-image: url('/assets/lowertraps.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw9{
+      background-image: url('/assets/uppertraps.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw10{
+      background-image: url('/assets/biceps.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw11{
+      background-image: url('/assets/triceps.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .mw12{
+      background-image: url('/assets/shoulders.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
 }
